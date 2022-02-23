@@ -1,6 +1,7 @@
 import abi from '../utils/TokenGenerator.json';
 import { ethers } from 'ethers';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Paper, Card, CardContent, Typography, TextField, Button } from '@mui/material';
 
 /* import Head from 'next/head'
 import Image from 'next/image' 
@@ -116,12 +117,46 @@ const Home = () => {
     };
   };
 
-  
+  const onNameChange = (e) => {
+    setTokenName(e.target.value);
+  };
 
-  return (
-    <div>
-      <h1>If You Can Read This, Celebrate</h1>
-    </div>
+  const onSymbolChange = (e) => {
+    setTokenSymbol(e.target.value);
+  };
+
+  useEffect(() => {
+
+  }, []);
+
+
+  if (address !== null && tokenAddress === null) return (
+    <Paper className="h-screen w-screen flex justify-center item-center">
+      <Card className="h-1/2 w-5/6">
+
+      </Card>
+    </Paper>    
+  )
+  else if (tokenAddress !== null ) return (
+    <Paper className="h-screen w-screen flex justify-center item-center">
+          <Card className="h-1/2 w-5/6">
+        
+        </Card>
+    </Paper>  
+  )
+  else if (loading === true && tokenAddress === null) return (
+  <Paper className="h-screen w-screen flex justify-center item-center">
+        <Card className="h-1/2 w-5/6">
+        
+        </Card>
+  </Paper>  
+  )
+  else return (
+    <Paper className="h-screen w-screen flex justify-center item-center">
+          <Card className="h-1/2 w-5/6">
+        
+        </Card>
+    </Paper>  
   )
 };
 
