@@ -2,11 +2,8 @@ import abi from '../utils/TokenGenerator.json';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { Paper, Card, CardContent, Typography, TextField, Button } from '@mui/material';
+import styles from '../styles/Home.module.css';
 
-/* import Head from 'next/head'
-import Image from 'next/image' 
-import styles from '../styles/Home.module.css'
-import { Typography, Paper, Card } from "@mui/material"; */
 
 const Home = () => {
   //Smart Contract Address for TokenGenerator
@@ -33,7 +30,9 @@ const Home = () => {
         console.log("Object:", ethereum);
       };
 
-      const accounts = await ethereum.request({ "eth_accounts" });
+
+      //removed "" eth_accounts
+      const accounts = await ethereum.request({ eth_accounts });
 
       if (accounts.length !==0) {
         const account = accounts[0];
@@ -115,7 +114,6 @@ const Home = () => {
         alert('Please ensure to input all fields, then generate the token');
       }
     };
-  };
 
   const onNameChange = (e) => {
     setTokenName(e.target.value);
@@ -131,30 +129,36 @@ const Home = () => {
 
 
   if (address !== null && tokenAddress === null) return (
-    <Paper className="h-screen w-screen flex justify-center item-center">
+    <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
       <Card className="h-1/2 w-5/6">
 
       </Card>
     </Paper>    
   )
   else if (tokenAddress !== null ) return (
-    <Paper className="h-screen w-screen flex justify-center item-center">
+    <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
           <Card className="h-1/2 w-5/6">
         
         </Card>
     </Paper>  
   )
   else if (loading === true && tokenAddress === null) return (
-  <Paper className="h-screen w-screen flex justify-center item-center">
+  <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
         <Card className="h-1/2 w-5/6">
         
         </Card>
   </Paper>  
   )
   else return (
-    <Paper className="h-screen w-screen flex justify-center item-center">
-          <Card className="h-1/2 w-5/6">
-        
+    <Paper className=" bg-blue-500 h-screen w-screen flex justify-center item-center">
+        <Card className="h-1/2 w-5/6">
+          <CardContent className="flex flex-col justify-between items-center h-full w-full">
+            <Typography variant="h4" className="text-center">
+              Generate Token
+            </Typography>
+            <Button className="btn bg-blue-500 text-white" onClick={connectWallet}>Generate</Button>
+            <div></div>
+          </CardContent>
         </Card>
     </Paper>  
   )
