@@ -34,9 +34,9 @@ const Home = () => {
       //removed "" eth_accounts
       const accounts = await ethereum.request({ eth_accounts });
 
-      if (accounts.length !==0) {
+      if (accounts.length !== 0) {
         const account = accounts[0];
-        console.log("Account Found");
+        console.log("Account Found", accounts);
         setAddress(account);
       } else {
         console.log("No Account Found");
@@ -49,6 +49,7 @@ const Home = () => {
 
   const connectWallet = async () => {
     try {
+
       const { ethereum } = window;
 
       if (!ethereum) {
@@ -56,7 +57,7 @@ const Home = () => {
         return;
       };
 
-      const accounts = await ethereum.request({ method: eth_request_accounts });
+      const accounts = await ethereum.request({ method: "eth_requestAccounts" });
       console.log("Connected", accounts[0]);
       setAddress(accounts[0]);
 
@@ -88,7 +89,7 @@ const Home = () => {
       try {
         const { ethereum } = window;
         const deployAddress = await tokenAddress.wait();
-        deployAddress = deployedAddress.event[0].address;
+        deployAddress = deployAddress.events[0].address;
         const wasAdded = await ethereum.request({
           method: "wallet_watchAsset",
           params: {
@@ -138,14 +139,17 @@ const Home = () => {
   else if (tokenAddress !== null ) return (
     <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
           <Card className="h-1/2 w-5/6">
-        
-        </Card>
+            <CardContent className="flex flex-col justify-between items-center h-full w-full">
+              <Typography variant="h4" className="text-center">Generate Token</Typography>
+              <Button className="btn bg-blue-500 text-white" onClick={addToken}>Add Token to MetaMask</Button>
+            </CardContent>
+          </Card>
     </Paper>  
   )
-  else if (loading === true && tokenAddress === null) return (
+  else if (loading == true && tokenAddress === null) return (
   <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
         <Card className="h-1/2 w-5/6">
-        
+          <Typography>Loading...</Typography>
         </Card>
   </Paper>  
   )
