@@ -67,7 +67,7 @@ const Home = () => {
   };
 
   const generateToken = async () => {
-    if (token && tokenSymbol && address) {
+    if (tokenName && tokenSymbol && address) {
 
       const { ethereum } = window;
 
@@ -132,7 +132,20 @@ const Home = () => {
   if (address !== null && tokenAddress === null) return (
     <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
       <Card className="h-1/2 w-5/6">
-
+        <CardContent className="flex flex-col justify-between items-center h-full w-full">
+            <Typography variant="h4" className="text-center">Generate Token</Typography>
+            <div className="h-1/2 flex flex-col justify-between items-center">
+                <div className="flex flex-col justify-center items-center">
+                  <Typography className="text-md text-italic text-center">Please Enter the Name of Your New Token</Typography>
+                  <TextField onChange={onNameChange} placeholder="Token Name"></TextField>
+                </div>
+                <div className="flex flex-col justify-center items-center">
+                <Typography className="text-md text-italic text-center">Please Enter a Symbol for Your New Token</Typography>
+                <TextField onChange={onSymbolChange} placeholder="Token Symbol"></TextField>
+                </div>
+            </div>
+            <Button className="btn bg-blue-500 text-white" onClick={generateToken}>Generate Token</Button>
+        </CardContent>
       </Card>
     </Paper>    
   )
