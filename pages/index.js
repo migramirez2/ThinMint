@@ -13,7 +13,7 @@ const Home = () => {
   const contractABI = abi.abi;
 
 
-  //React Hooks
+  //Hooks
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState(null);
   const [tokenName, setTokenName] = useState(null);
@@ -31,7 +31,6 @@ const Home = () => {
       };
 
 
-      //removed "" eth_accounts
       const accounts = await ethereum.request({ eth_accounts });
 
       if (accounts.length !== 0) {
@@ -72,7 +71,7 @@ const Home = () => {
       const { ethereum } = window;
 
       if (ethereum) {
-        const provider = new ethers.provider.Web3Provider(ethereum);
+        const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const generateTokenContract = new ethers.Contract(contractAddress, contractABI, signer);
         const out = await generateTokenContract.generateToken(tokenName, tokenSymbol, address);
