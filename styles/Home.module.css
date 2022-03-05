@@ -1,6 +1,19 @@
-.container {
-  padding: 0 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400&display=swap');
+
+/*
+:root {
+  --primary-color: #0fB8e0;
+  --primary-dark: #0d2154;
 }
+span {
+  color: var(--primary-color);
+}
+*/
+
+
+
+
+/* Old CSS */
 
 .main {
   min-height: 100vh;
@@ -108,9 +121,4 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
+

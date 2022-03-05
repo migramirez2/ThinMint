@@ -1,3 +1,191 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  h2 {
+    font-size: 3rem;
+  }
+  
+  .container {
+    max-width: 1240px;
+    margin: auto;
+    height: 100%;
+    position: relative;
+  }
+  
+  button {
+    font-family: 'Inter', sans-serif;
+    padding: .7rem 1.5rem;
+    margin: 1rem 0;
+    background-color: #0fB8e0;
+    border: 1px solid #0fB8e0;
+    color: #f8f8f8;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #47dcff;
+    border: 1px solid #47dcff;
+  }
+
+  .hero {
+    width: 100%;
+    height: 100vh;
+    background: url('../pages/assets/cyber-bg.png') no-repeat center center/cover;
+    background-size: cover;
+  }
+
+  .hero .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero .content {
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      margin-left: 6rem;
+  }
+
+  .hero h1 {
+      color: #f8f8f8;
+  }
+
+  .hero .blue {
+      color: #0fB8e0;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin: 1rem;
+  }
+
+  .navbar .logo .icon {
+    font-size: 3rem;
+    margin-right: 1rem;
+    color: #0fB8e0;
+  }
+
+  .hamburger {
+    display: block;
+    padding: 1rem;
+  }
+
+  .navbar .nav-menu {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+  }
+  .navbar li {
+    padding: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .navbar .icon {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+
+
+
+@media screen and (max-width: 940px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  .navbar .hamburger {
+    display: block;
+    z-index: 15;
+}
+
+.navbar .nav-menu {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left:-100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .8);
+    transition: 0.5s ease-in;
+}
+
+.navbar .active {
+    left: 0;
+}
+
+.navbar li {
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.navbar button {
+    font-size: 1.8rem;
+}
+}
