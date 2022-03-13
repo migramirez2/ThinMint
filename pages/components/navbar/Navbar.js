@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SiDatabricks } from 'react-icons/si'
+import Image from 'next/image'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Navbar = () => {
@@ -7,19 +7,20 @@ const Navbar = () => {
     const handleNav = () => setNav(!nav)
 
     return (
-        <div className="navbar">
+        <div name='top' className="navbar">
             <div className="container">
                 <div className="logo">
-                    <SiDatabricks className="icon" />
-                    <h1>thinMint</h1>
+                    <div className='mintlogo'>
+                        <Image src="/logomint.png" alt="me" width="64" height="64" />
+                    </div>
+                    <h1>thin<span>Mint</span></h1>
                 </div>
 
                 <ul className={nav ? 'nav-menu active' : 'nav-menu'}>
                     <li>Home</li>
                     <li>Mint</li>
-                    <li>MetaMask</li>
+                    <li>Info</li>
                     <li>Contact</li>
-                    <button>Sign In</button>
                 </ul>
                 <div className='hamburger' onClick={handleNav}>
                     {!nav ? (<FaBars className='icon' />):(<FaTimes className='icon' />)}

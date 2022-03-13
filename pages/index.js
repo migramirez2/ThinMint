@@ -2,7 +2,7 @@ import abi from '../utils/TokenGenerator.json';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { Paper, Card, CardContent, Typography, TextField, Button } from '@mui/material';
-import styles from '../styles/Home.module.css';
+import App from './_app';
 
 
 const Home = () => {
