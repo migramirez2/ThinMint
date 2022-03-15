@@ -24,29 +24,23 @@ const Footer = () => {
                         <h3>Navigation</h3>
                         <p>Home</p>
                         <p>Mint</p>
-                        <p>Info</p>
+                        <p>Setup</p>
                         <p>Contact</p>
                     </div>
                     <div className="col">
-                        <h3>My Account</h3>
-                        <p>Home</p>
-                        <p>Mint</p>
-                        <p>Info</p>
-                        <p>Contact</p>
+                        <h3></h3>
+                        <p></p>
+
                     </div>
                     <div className="col">
-                        <h3>Information</h3>
-                        <p>Home</p>
-                        <p>Mint</p>
-                        <p>Info</p>
-                        <p>Contact</p>
+                        <h3></h3>
+                        <p></p>
+
                     </div>
                     <div className="col">
-                        <h3>Legal</h3>
-                        <p>Home</p>
-                        <p>Mint</p>
-                        <p>Info</p>
-                        <p>Contact</p>
+                        <h3></h3>
+                        <p></p>
+
                     </div>
                     <form>
                         <h3>Join Our Team</h3>

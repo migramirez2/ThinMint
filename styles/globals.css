@@ -44,7 +44,6 @@ h2 {
 }
 
 .container {
-  max-width: 1240px;
   margin: auto;
   height: 100%;
   position: relative;
@@ -166,14 +165,23 @@ h2 {
   justify-content: center;
   position: relative;
   top: 25%;
-  left: 50%;
+  left: 60%;
   width: 50%;
+}
+
+.content p {
+  max-width: 38rem;
+  color:#0F054C;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  font-weight: 500;
 }
 
 .generator h1 {
   font-size: 4.5rem;
   font-weight: 900;
   color: #0F054C;
+  margin-top: 1.25rem;
 }
 
 button {
@@ -215,6 +223,44 @@ button:hover {
   background: linear-gradient(147deg, rgb(56, 56, 151) 0%, rgb(123, 255, 195) 100%);
 }
 
+.mint-btn {
+  margin-left: 14.5rem;
+}
+
+.generator input {
+  border: solid 2px #4FFFB0;
+  text-align: center;
+  color: #0F054C;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  background: rgba(123, 255, 195, .35);
+}
+
+.generator input::placeholder {
+  color: #0F054C;
+  opacity: .6;
+}
+
+.generator input:hover {
+  background: rgba(134, 255, 201, .25);
+}
+
+.generator input:focus {
+  background: rgba(134, 255, 201, .25);
+  outline: none !important;
+  caret-color: #4FFFB0;
+}
+
+.generator input:focus::placeholder {
+  visibility: hidden;
+}
+
+
+.hero .hollow {
+  background: none;
+  color: #4FFFB0;
+}
+
 .two-button {
   max-width: 16rem;
   justify-content: space-between;
@@ -222,8 +268,15 @@ button:hover {
   padding: 0;
 }
 
-.button + .button {
-  margin-left: 3rem;
+.generator .two-button {
+  max-width: 36rem;
+  justify-content: space-around;
+  margin-left: 4rem;
+}
+
+.float-left {
+  margin-left: 0 !important;
+  float: left;
 }
 
 a.button {
@@ -272,7 +325,7 @@ a.button {
 
 .footer {
   width: 100%;
-  height: 60vh;
+  height: 45vh;
   position: relative;
   background: rgba(255, 255, 255, 0.7);
 }
@@ -356,7 +409,8 @@ a.button {
 }
 
 .footer form .social-group{
-  display: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .footer form .mail-icon {
@@ -375,6 +429,18 @@ a.button {
   border-radius: 4px;
   color: #f8f8f8;
   font-size: 3rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .generator h1 {
+    font-size: 3.7rem;
+  }
+}
+
+@media screen and (max-width: 1022px) {
+  .generator h1 {
+    font-size: 3.0rem;
+  }
 }
 
 @media screen and (max-height: 940px) {

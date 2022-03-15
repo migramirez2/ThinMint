@@ -83,7 +83,7 @@ const Home = () => {
     };
   };
 
-  
+  /* addToken TO WALLET IS NOT CURRENTLY CALLED, CAUSES PAGE ISSUES
   const addToken = async () => {
     if (tokenAddress !== null) {
       try {
@@ -115,7 +115,8 @@ const Home = () => {
         alert('Please ensure to input all fields, then generate the token');
       }
     };
-
+  END ADDTOKEN */  
+  
   const onNameChange = (e) => {
     setTokenName(e.target.value);
   };
@@ -128,24 +129,17 @@ const Home = () => {
 
   }, []);
 
-  /*
-  const etherscanAddress = JSON.stringify(tokenAddress.hash).replace(/\"/g, "");
-  */
-
   if (address !== null && tokenAddress === null) return (
     <div className='generator'>
       <div className="container">
         <div className="content">
-          <h1>Generate Token</h1>
-          <div>
-            <p>Please Enter the Name of Your New Token</p>
+          <h1>Let's <span>Mint</span>!</h1>
+          <p>Minting a token on the Ethereum blockchain has never been easier. Enter a Name and 3-4 Letter Symbol for your new Token and let our Smart Contract handle the rest behind the scenes. </p>
+          <div className='float-left two-button'>
             <input onChange={onNameChange} type="text" placeholder="Token Name"></input>
-          </div>
-          <div>
-            <p>Please Enter a Symbol for Your New Token</p>
             <input onChange={onSymbolChange} type="text" placeholder="Token Symbol"></input>
-            </div>
-          <button onClick={generateToken} className="button">MINT</button>
+          </div>
+          <button onClick={generateToken} className="button mint-btn">MINT</button>
         </div>
       </div>
     </div>   
@@ -157,7 +151,7 @@ const Home = () => {
           <h1>{tokenName} Was</h1>
           <h1>Successfully <span>Minted</span>.</h1>
           <div className='two-button'>
-            <a href={"https://rinkeby.etherscan.io/tx/" + JSON.stringify(tokenAddress.hash).replace(/\"/g, "")} target="_blank" className="button">VIEW ON ETHERSCAN</a>
+            <a href={"https://rinkeby.etherscan.io/tx/" + JSON.stringify(tokenAddress.hash).replace(/\"/g, "")} target="_blank" className="button">VIEW ETHERSCAN</a>
             <a href="." className="button secondcolor">NEW MINT</a>
           </div>
         </div>
@@ -179,8 +173,8 @@ const Home = () => {
         <div className="content">
           <h1>Before We Begin,</h1>
           <h1>Please Connect</h1>
-          <h1><span>to MetaMask</span></h1>
-          <button onClick={connectWallet} className="button">Connect</button>
+          <h1><span>to MetaMask.</span></h1>
+          <button onClick={connectWallet} className="button">CONNECT</button>
           <div></div>
         </div>
       </div>
