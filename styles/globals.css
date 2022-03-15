@@ -166,8 +166,8 @@ h2 {
   justify-content: center;
   position: relative;
   top: 25%;
-  left: 55%;
-  width: 45%;
+  left: 50%;
+  width: 50%;
 }
 
 .generator h1 {
@@ -184,10 +184,10 @@ button {
   background-color: #4FFFB0;
   border: 2.5px solid #4FFFB0;
   color: #0F054C;
-  font-size: 1rem;
+  font-size: 1.4rem;
   width: fit-content;
   font-weight: 500;
-  border-radius: 34px;
+  border-radius: 22px;
 }
 
 button:hover {
@@ -199,27 +199,31 @@ button:hover {
   display: inline-block;
   font-family: 'Inter', sans-serif;
   padding: .7rem 1.5rem;
-  margin: 1rem 0;
-  font-size: 1rem;
+  margin-top: 1rem;
+  font-size: 1.6rem;
   width: fit-content;
   font-weight: 500;
-  border-radius: 34px;
+  border-radius: 22px;
   background: rgb(79,255,176);
-  background: linear-gradient(147deg, rgba(79,255,176,1) 0%, rgba(9,9,121,1) 47%, rgba(79,255,176,1) 100%);
+  background: linear-gradient(147deg, rgba(9,9,121,1) 0%, rgba(79,255,176,1) 100%);
   color: white;
   border: none;
 }
 
 .generator .button:hover {
   background: rgb(123, 255, 195);
-  background: linear-gradient(147deg, rgb(123, 255, 195) 0%, rgb(56, 56, 151) 47%, rgb(123, 255, 195) 100%);
+  background: linear-gradient(147deg, rgb(56, 56, 151) 0%, rgb(123, 255, 195) 100%);
 }
 
 .two-button {
-  width: 27rem;
+  max-width: 16rem;
+  justify-content: space-between;
   display: inline-flex;
-  justify-content: space-around;
-  padding: 3%;
+  padding: 0;
+}
+
+.button + .button {
+  margin-left: 3rem;
 }
 
 a.button {

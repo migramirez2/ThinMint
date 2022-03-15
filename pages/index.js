@@ -180,7 +180,7 @@ const Home = () => {
           <h1>Before We Begin,</h1>
           <h1>Please Connect</h1>
           <h1><span>to MetaMask</span></h1>
-          <button onClick={connectWallet} className="button">CONNECT</button>
+          <button onClick={connectWallet} className="button">Connect</button>
           <div></div>
         </div>
       </div>
