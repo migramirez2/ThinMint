@@ -1,8 +1,7 @@
-import abi from '../utils/TokenGenerator.json';
+import abi from '../utils/TokenGenerator.json'
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { Paper, Card, CardContent, Typography, TextField, Button } from '@mui/material';
-import App from './_app';
 
 
 const Home = () => {
@@ -75,6 +74,7 @@ const Home = () => {
         const signer = provider.getSigner();
         const generateTokenContract = new ethers.Contract(contractAddress, contractABI, signer);
         const out = await generateTokenContract.generateToken(tokenName, tokenSymbol, address);
+        console.log(address)
         setTokenAddress(out);
       };
 
@@ -83,6 +83,7 @@ const Home = () => {
     };
   };
 
+  
   const addToken = async () => {
     if (tokenAddress !== null) {
       try {
@@ -127,56 +128,63 @@ const Home = () => {
 
   }, []);
 
+  /*
+  const etherscanAddress = JSON.stringify(tokenAddress.hash).replace(/\"/g, "");
+  */
 
   if (address !== null && tokenAddress === null) return (
-    <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
-      <Card className="h-1/2 w-5/6">
-        <CardContent className="flex flex-col justify-between items-center h-full w-full">
-            <Typography variant="h4" className="text-center">Generate Token</Typography>
-            <div className="h-1/2 flex flex-col justify-between items-center">
-                <div className="flex flex-col justify-center items-center">
-                  <Typography className="text-md text-italic text-center">Please Enter the Name of Your New Token</Typography>
-                  <TextField onChange={onNameChange} placeholder="Token Name"></TextField>
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                <Typography className="text-md text-italic text-center">Please Enter a Symbol for Your New Token</Typography>
-                <TextField onChange={onSymbolChange} placeholder="Token Symbol"></TextField>
-                </div>
+    <div className='generator'>
+      <div className="container">
+        <div className="content">
+          <h1>Generate Token</h1>
+          <div>
+            <p>Please Enter the Name of Your New Token</p>
+            <input onChange={onNameChange} type="text" placeholder="Token Name"></input>
+          </div>
+          <div>
+            <p>Please Enter a Symbol for Your New Token</p>
+            <input onChange={onSymbolChange} type="text" placeholder="Token Symbol"></input>
             </div>
-            <Button className="btn bg-blue-500 text-white" onClick={generateToken}>Generate Token</Button>
-        </CardContent>
-      </Card>
-    </Paper>    
+          <button onClick={generateToken} className="button">MINT</button>
+        </div>
+      </div>
+    </div>   
   )
   else if (tokenAddress !== null ) return (
-    <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
-          <Card className="h-1/2 w-5/6">
-            <CardContent className="flex flex-col justify-between items-center h-full w-full">
-              <Typography variant="h4" className="text-center">Generate Token</Typography>
-              <Button className="btn bg-blue-500 text-white" onClick={addToken}>Add Token to MetaMask</Button>
-            </CardContent>
-          </Card>
-    </Paper>  
+    <div className='generator'>
+      <div className="container">
+        <div className="content">
+          <h1>{tokenName} Was</h1>
+          <h1>Successfully <span>Minted</span>.</h1>
+          <div className='two-button'>
+            <a href={"https://rinkeby.etherscan.io/tx/" + JSON.stringify(tokenAddress.hash).replace(/\"/g, "")} target="_blank" className="button">VIEW ON ETHERSCAN</a>
+            <a href="." className="button secondcolor">NEW MINT</a>
+          </div>
+        </div>
+      </div>
+    </div>  
   )
   else if (loading == true && tokenAddress === null) return (
-  <Paper className="bg-blue-500 h-screen w-screen flex justify-center item-center">
-        <Card className="h-1/2 w-5/6">
-          <Typography>Loading...</Typography>
-        </Card>
-  </Paper>  
+    <div className='generator'>
+      <div className="container">
+        <div className="content">
+          <h1>LOADING...</h1>
+        </div>
+      </div>
+    </div> 
   )
   else return (
-    <Paper className=" bg-blue-500 h-screen w-screen flex justify-center item-center">
-        <Card className="h-1/2 w-5/6">
-          <CardContent className="flex flex-col justify-between items-center h-full w-full">
-            <Typography variant="h4" className="text-center">
-              Generate Token
-            </Typography>
-            <Button className="btn bg-blue-500 text-white" onClick={connectWallet}>Generate</Button>
-            <div></div>
-          </CardContent>
-        </Card>
-    </Paper>  
+    <div className='generator'>
+      <div className="container">
+        <div className="content">
+          <h1>Before We Begin,</h1>
+          <h1>Please Connect</h1>
+          <h1><span>to MetaMask</span></h1>
+          <button onClick={connectWallet} className="button">CONNECT</button>
+          <div></div>
+        </div>
+      </div>
+    </div>
   )
 };
 

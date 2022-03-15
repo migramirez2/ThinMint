@@ -8,7 +8,9 @@ const Hero = () => {
                     <h1>Create a</h1>
                     <h1 className='blue'>New ERC-20 Token</h1>
                     <h1>with thin<span>Mint</span></h1>
-                    <div><button>Let's Mint</button></div>
+                    <div className="two-button">
+                        <button>MINT</button><button>SETUP</button>
+                    </div>
                 </div>
             </div>
         </div>
