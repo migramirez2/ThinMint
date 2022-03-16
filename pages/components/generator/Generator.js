@@ -2,7 +2,7 @@
 
 const Generator = () => {
     return (
-        <div className='generator'>
+        <div  className='generator'>
             <div className="container">
                 <div className="content">
                         <h2><span>Generator</span></h2>

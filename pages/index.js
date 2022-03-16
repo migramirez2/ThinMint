@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Paper, Card, CardContent, Typography, TextField, Button } from '@mui/material';
 
 
+
 const Home = () => {
   //Smart Contract Address for TokenGenerator
   const contractAddress = "0xBB9C6603433A117f0c50B9e54Db5E517bFC1B21b";
@@ -130,9 +131,9 @@ const Home = () => {
   }, []);
 
   if (address !== null && tokenAddress === null) return (
-    <div className='generator'>
+    <div id="generate" name="generate" className='generator'>
       <div className="container">
-        <div className="content">
+        <div data-aos="fade-up" className="content">
           <h1>Let's <span>Mint</span>!</h1>
           <p>Minting a token on the Ethereum blockchain has never been easier. Enter a Name and 3-4 Letter Symbol for your new Token and let our Smart Contract handle the rest behind the scenes. </p>
           <div className='float-left two-button'>
@@ -145,12 +146,12 @@ const Home = () => {
     </div>   
   )
   else if (tokenAddress !== null ) return (
-    <div className='generator'>
+    <div id="generate" name="generate" className='generator'>
       <div className="container">
         <div className="content">
           <h1>{tokenName} Was</h1>
           <h1>Successfully <span>Minted</span>.</h1>
-          <div className='two-button'>
+          <div className='two-button float-left success'>
             <a href={"https://rinkeby.etherscan.io/tx/" + JSON.stringify(tokenAddress.hash).replace(/\"/g, "")} target="_blank" className="button">VIEW ETHERSCAN</a>
             <a href="." className="button secondcolor">NEW MINT</a>
           </div>
@@ -159,7 +160,7 @@ const Home = () => {
     </div>  
   )
   else if (loading == true && tokenAddress === null) return (
-    <div className='generator'>
+    <div id="generate" name="generate" className='generator'>
       <div className="container">
         <div className="content">
           <h1>LOADING...</h1>
@@ -168,12 +169,12 @@ const Home = () => {
     </div> 
   )
   else return (
-    <div className='generator'>
+    <div id="generate" name="generate" className='generator'>
       <div className="container">
         <div className="content">
           <h1>Before We Begin,</h1>
           <h1>Please Connect</h1>
-          <h1><span>to MetaMask.</span></h1>
+          <h1><span>to MetaMask</span></h1>
           <button onClick={connectWallet} className="button">CONNECT</button>
           <div></div>
         </div>
