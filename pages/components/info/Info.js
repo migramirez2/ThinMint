@@ -18,7 +18,7 @@ const Info = () => {
                                      MINT
                             </Link>
                             <a href="mailto:waine.andrew@protonmail.com?subject=Regarding thinMint" className='button hollow'>
-                                     Contact
+                                     CONTACT
                             </a>
                     </div>
                 </div>

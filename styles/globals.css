@@ -128,15 +128,18 @@ h2 {
 .navbar li {
   text-align: center;
   height: fit-content;
-  width: 6rem;
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 1.4rem;
   font-weight: 600;
   color: #fff;
-  border-radius: 22px;
+  border-radius: 22px !important;
 }
 
 .navbar li:hover {
-  background-color: #0F054C;
+  background: rgb(79,255,176) !important;
+  background: linear-gradient(360deg, rgba(9,9,121,.5) 35%, rgba(79,255,176,.5) 100%) !important;
 }
 
 .navbar .icon {
@@ -220,8 +223,9 @@ h2 {
 }
 
 .button:hover {
-  background: none;
-  color: rgb(79, 255, 176);
+  background: rgb(79,255,176);
+  background: linear-gradient(360deg, rgba(9,9,121,.5) 35%, rgba(79,255,176,.5) 100%);
+  color: white;
 }
 
 
@@ -283,12 +287,22 @@ h2 {
   color: #4FFFB0 !important;
 }
 
+.hollow:hover {
+  background: rgb(79,255,176) !important;
+  background: linear-gradient(360deg, rgba(9,9,121,.5) 35%, rgba(79,255,176,.5) 100%) !important;
+  color: white !important;
+}
+
 .two-button {
   width: 17rem;
   justify-content: space-between;
   display: inline-flex;
   padding: 0;
   margin-left: 0;
+}
+
+.info .two-button {
+  width: 18.5rem;
 }
 
 .generator .two-button {
@@ -380,7 +394,7 @@ a.button {
 
 .footer {
   width: 100%;
-  height: 45vh;
+  height: 50vh;
   position: relative;
   background: rgba(255, 255, 255, 0.7);
 }
@@ -388,7 +402,7 @@ a.button {
 .footer:before {
   content:'';
   position: absolute;
-  background: url('../pages/assets/footer-bg.jpg')no-repeat center center/cover;
+  background: url('../pages/assets/wave-bg.png') no-repeat center center/cover;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -405,7 +419,7 @@ a.button {
   width: 100%;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .footer .top .logo-footer {
@@ -413,11 +427,18 @@ a.button {
   align-items: center;
 }
 
-.footer .top .icon {
+.footer .icon {
+  align-items: center;
   font-size: 3rem;
   margin-right: 1rem;
   color: #4FFFB0;
   cursor: pointer;
+}
+
+.footer h1 {
+  color: #0F054C;
+  font-size: 4.5rem;
+  font-weight: 400;
 }
 
 .footer h2 {
@@ -428,6 +449,7 @@ a.button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
   padding: 1rem;
+  padding-bottom: 8rem;
   width: 100%;
 }
 
@@ -438,6 +460,16 @@ a.button {
 
 .footer p {
   margin: .5rem 0;
+}
+
+.footer .arrow-container {
+  position: absolute;
+  right: 2.5%;
+  top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .25rem;
 }
 
 .footer form {

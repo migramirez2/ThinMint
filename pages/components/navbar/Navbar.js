@@ -18,13 +18,13 @@ const Navbar = () => {
                 </div>
 
                 <ul className={nav ? 'nav-menu active' : 'nav-menu'}>
-                <Link className='button' activeClass="active" to="top" spy={true} smooth={true} duration={500} >
+                <Link activeClass="active" to="top" spy={true} smooth={true} duration={500} >
                     <li>Home</li>
                 </Link>
-                <Link className='button' activeClass="active" to="generate" spy={true} smooth={true} duration={500} >
+                <Link activeClass="active" to="generate" spy={true} smooth={true} duration={500} >
                     <li>Mint</li>
                 </Link>
-                <Link className='button' activeClass="active" to="info" spy={true} smooth={true} duration={1000} >
+                <Link activeClass="active" to="info" spy={true} smooth={true} duration={1000} >
                     <li>Setup</li>
                 </Link>
                     <li><a href="mailto:waine.andrew@protonmail.com?subject=Regarding thinMint">Contact</a></li>
