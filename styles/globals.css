@@ -137,6 +137,7 @@ h2 {
   font-weight: 600;
   color: #fff;
   border-radius: 22px !important;
+  cursor: pointer;
 }
 
 .navbar li:hover {
@@ -208,6 +209,7 @@ h2 {
   width: fit-content;
   font-weight: 500;
   border-radius: 22px;
+  cursor: pointer;
 }
 
 .info .button {
@@ -222,6 +224,7 @@ h2 {
   width: fit-content;
   font-weight: 500;
   border-radius: 22px;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -244,6 +247,7 @@ h2 {
   background: linear-gradient(147deg, rgba(9,9,121,1) 0%, rgba(79,255,176,1) 100%);
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 .generator .button:hover {
@@ -478,6 +482,16 @@ a.button {
 
 .footer-links {
   color: #0F054C;
+  padding-left:.75rem;
+  padding-right:.75rem;
+  padding-top: .15rem;
+  padding-bottom: .15rem;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.footer-links:hover {
+  background-color: rgba(79,255,176,.3);
 }
 
 .footer .arrow-container {

@@ -186,20 +186,6 @@ const Home = () => {
       },
   };
 
-  const indexTextVariants4 = {
-      hidden: {
-          scale: 1,
-          opacity: 0
-      },
-      visible : {
-          scale: 1,
-          opacity: 1,
-          transition: {
-              delay: 1.5,
-              duration: 1.0,
-          },
-      },
-  };
 
   if (address !== null && tokenAddress === null) return (
     <div id="generate" name="generate" className='generator'>

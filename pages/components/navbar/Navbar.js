@@ -16,7 +16,6 @@ const Navbar = () => {
                     </div>
                     <h1>thin<span>Mint</span></h1>
                 </div>
-
                 <ul className={nav ? 'nav-menu active' : 'nav-menu'}>
                 <Link activeClass="active" to="top" spy={true} smooth={true} duration={500} >
                     <li>Home</li>
