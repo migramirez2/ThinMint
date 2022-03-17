@@ -52,7 +52,7 @@ const Home = () => {
       const { ethereum } = window;
 
       if (!ethereum) {
-        alert("Get Metamask");
+        alert("You do not have MetaMask not installed, please see the Setup section for instructions");
         return;
       };
 
