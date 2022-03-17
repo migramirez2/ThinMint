@@ -306,7 +306,7 @@ h2 {
 }
 
 .generator .two-button {
-  max-width: 36rem;
+  width: 36rem !important;
   justify-content: space-around;
   margin-left: 4rem;
 }
@@ -435,6 +435,10 @@ a.button {
   cursor: pointer;
 }
 
+.footer .icon:hover {
+  color: #8affca;
+}
+
 .footer h1 {
   color: #0F054C;
   font-size: 4.5rem;
@@ -458,8 +462,20 @@ a.button {
   text-transform: uppercase;
 }
 
+.footer .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+}
+
 .footer p {
   margin: .5rem 0;
+}
+
+.footer-links {
+  color: #0F054C;
 }
 
 .footer .arrow-container {
@@ -496,8 +512,12 @@ a.button {
 }
 
 .footer form .social-group{
+  align-items: center;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  width: 10rem;
+  margin-left: 5rem;
 }
 
 .footer form .mail-icon {
@@ -516,6 +536,10 @@ a.button {
   border-radius: 4px;
   color: #f8f8f8;
   font-size: 3rem;
+}
+
+.c-footer-2 {
+  margin-top: 13rem;
 }
 
 @media screen and (max-width: 1300px) {

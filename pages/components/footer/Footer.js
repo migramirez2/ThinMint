@@ -22,36 +22,17 @@ const Footer = () => {
                         </Link>
                         </div>
                 </div>
-                <div className="col-container">
-                    <div className="col">
-                        <h3>Navigation</h3>
-                        <p>Home</p>
-                        <p>Mint</p>
-                        <p>Setup</p>
-                        <p>Contact</p>
-                    </div>
-                    <div className="col">
-                        <h3></h3>
-                        <p></p>
-
-                    </div>
-                    <div className="col">
-                        <h3></h3>
-                        <p></p>
-
-                    </div>
-                    <div className="col">
-                        <h3></h3>
-                        <p></p>
-
+                <div className="c-footer-2">
+                    <div className='row'>
+                    <Link className="footer-links" activeClass="active" to="top" spy={true} smooth={true} duration={1500} ><p>Home</p></Link>
+                    <Link className="footer-links" activeClass="active" to="generate" spy={true} smooth={true} duration={1000} ><p>Mint</p></Link>
+                    <Link className="footer-links" activeClass="active" to="info" spy={true} smooth={true} duration={500} ><p>Setup</p></Link>
+                    <a href="mailto:waine.andrew@protonmail.com?subject=Regarding thinMint" className='footer-links'><p>Contact</p></a>
                     </div>
                     <form>
                         <div className="social-group">
-                            <FiInstagram className='social-icon' />
-                            <FiFacebook className='social-icon' />
-                            <FiLinkedin className='social-icon' />
-                            <FiDribbble className='social-icon' />
-                            <FiGithub className='social-icon' />
+                            <a href="https://www.linkedin.com/in/andrew-waine-florida/" target="_blank"><FiLinkedin className='social-icon' /></a>
+                            <a href="https://github.com/Andy-Waine/thinMint" target="_blank"><FiGithub className='social-icon' /></a>
                         </div>
                     </form>
                 </div>
