@@ -156,7 +156,7 @@ h2 {
 .generator:before {
   content: '';
   position: absolute;
-  background: url('../pages/assets/generate-bg.png') no-repeat center center/cover;
+  background: url("/generate-bg.png") no-repeat center center/cover;
   height: 100vh;
   width: 100%;
   z-index: -1;
@@ -368,7 +368,7 @@ a.button {
 .info:before {
   content: '';
   position: absolute;
-  background: url('../pages/assets/setup-bg.png') no-repeat center center/cover;
+  background: url("/setup-bg.png") no-repeat center center/cover;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -402,7 +402,7 @@ a.button {
 .footer:before {
   content:'';
   position: absolute;
-  background: url('../pages/assets/wave-bg.png') no-repeat center center/cover;
+  background: url("/wave-bg.png") no-repeat center center/cover;
   height: 100%;
   width: 100%;
   z-index: -1;
