@@ -101,16 +101,19 @@ h2 {
   align-items: center;
   color: #fff;
   left: 6%;
+  cursor: default;
 }
 
 .navbar .logo .icon {
   font-size: 3rem;
   margin-right: 1rem;
   color: #4FFFB0;
+  cursor: default;
 }
 
 .mintlogo {
   padding: 5px;
+  cursor: default;
 }
 
 .hamburger {
@@ -431,6 +434,7 @@ a.button {
 .footer .top .logo-footer {
   display: flex;
   align-items: center;
+  cursor: default;
 }
 
 .footer .icon {
@@ -536,14 +540,6 @@ a.button {
   margin-left: 5rem;
 }
 
-.footer form .mail-icon {
-  position: absolute;
-  font-size: 1.4rem;
-  margin: 1rem;
-  right: .2rem;
-  color: #aaa;
-  cursor: pointer;
-}
 
 .footer form .social-icon {
   margin: 1rem 1rem 1rem 0;
@@ -552,6 +548,10 @@ a.button {
   border-radius: 4px;
   color: #f8f8f8;
   font-size: 3rem;
+}
+
+.footer form .social-icon:hover {
+  background-color: #1a3372;
 }
 
 .cancel-div  {
