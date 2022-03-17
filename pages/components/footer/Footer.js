@@ -16,11 +16,7 @@ const Footer = () => {
                         </div>
                             <h1>thin<span>Mint</span></h1>
                         </div>
-                        <div className='arrow-container'>
-                        <Link activeClass="active" to="top" spy={true} smooth={true} duration={500} >
-                            <BsFillArrowUpCircleFill className='icon' />
-                        </Link>
-                        </div>
+
                 </div>
                 <div className="c-footer-2">
                     <div className='row'>
@@ -40,5 +36,14 @@ const Footer = () => {
         </div>
     )
 }
+
+/*
+Footer Arrow HTML Removed due to Redundancy
+    <div className='arrow-container'>
+    <Link activeClass="active" to="top" spy={true} smooth={true} duration={500} >
+        <BsFillArrowUpCircleFill className='icon' />
+    </Link>
+    </div>
+*/
 
 export default Footer
