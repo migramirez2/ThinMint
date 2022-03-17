@@ -540,6 +540,10 @@ a.button {
   font-size: 3rem;
 }
 
+.cancel-div  {
+  display: inline-block;
+}
+
 .c-footer-2 {
   margin-top: 13rem;
 }
