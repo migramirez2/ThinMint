@@ -1,6 +1,8 @@
 import abi from '../utils/TokenGenerator.json'
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Paper, Card, CardContent, Typography, TextField, Button } from '@mui/material';
 
 
@@ -12,13 +14,16 @@ const Home = () => {
   //initializes new abi per ethers.js recommendation
   const contractABI = abi.abi;
 
-
-  //Hooks
+  //Hooks - Minting Functions
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState(null);
   const [tokenName, setTokenName] = useState(null);
   const [tokenSymbol, setTokenSymbol] = useState(null);
   const [tokenAddress, setTokenAddress] = useState(null);
+
+  //Hooks - Animation
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
 
   const checkIfWalletConnected = async () => {
     try {
@@ -52,7 +57,7 @@ const Home = () => {
       const { ethereum } = window;
 
       if (!ethereum) {
-        alert("You do not have MetaMask not installed, please see the Setup section for instructions");
+        alert("It appears you do not have MetaMask installed, please see the Setup section for instructions");
         return;
       };
 
@@ -127,27 +132,96 @@ const Home = () => {
   };
 
   useEffect(() => {
+    if (inView) {
+        controls.start('visible');
+    }
+    if (!inView) {
+        controls.start('hidden');
+    }
+  }, [controls, inView]);
 
-  }, []);
+  //animation variants
+  const indexTextVariants = {
+      hidden: {
+          scale: 1,
+          opacity: 0,
+      },
+      visible : {
+          scale: 1,
+          opacity: 1,
+          transition: {
+              delay: 0,
+              duration: 1.0,
+          },
+      },
+  };
+
+  const indexTextVariants2 = {
+      hidden: {
+          scale: 1,
+          opacity: 0
+      },
+      visible : {
+          scale: 1,
+          opacity: 1,
+          transition: {
+              delay: 0,
+              duration: 1.5,
+          },
+      },
+  };
+
+  const indexTextVariants3 = {
+      hidden: {
+          scale: 1,
+          opacity: 0
+      },
+      visible : {
+          scale: 1,
+          opacity: 1,
+          transition: {
+              delay: 1.0,
+              duration: 1.0,
+          },
+      },
+  };
+
+  const indexTextVariants4 = {
+      hidden: {
+          scale: 1,
+          opacity: 0
+      },
+      visible : {
+          scale: 1,
+          opacity: 1,
+          transition: {
+              delay: 1.5,
+              duration: 1.0,
+          },
+      },
+  };
 
   if (address !== null && tokenAddress === null) return (
     <div id="generate" name="generate" className='generator'>
       <div className="container">
-        <div data-aos="fade-up" className="content">
-          <h1>Let&apos;s <span>Mint</span>!</h1>
-          <p>Minting a token on the Ethereum blockchain has never been easier. Enter a Name and 3-4 Letter Symbol for your new Token and let our Smart Contract handle the rest behind the scenes. </p>
-          <div className='float-left two-button'>
-            <input onChange={onNameChange} type="text" placeholder="Token Name"></input>
-            <input onChange={onSymbolChange} type="text" placeholder="Token Symbol"></input>
-          </div>
-          <button onClick={generateToken} className="button mint-btn">MINT</button>
-        </div>
+          <motion.div ref={ref} initial="hidden" animate="visible" variants={indexTextVariants} className="content">
+            <h1>Let&apos;s <span>Mint</span>!</h1>
+          </motion.div>
+          <motion.div ref={ref} initial="hidden" animate="visible" variants={indexTextVariants2} className="content">
+            <p>Minting a token on the Ethereum blockchain has never been easier. Enter a Name and 3-4 Letter Symbol for your new Token and let our Smart Contract handle the rest behind the scenes. </p>
+            <div className='float-left two-button'>
+              <input onChange={onNameChange} type="text" placeholder="Token Name"></input>
+              <input onChange={onSymbolChange} type="text" placeholder="Token Symbol"></input>
+            </div>
+            <button onClick={generateToken} className="button mint-btn">MINT</button>
+          </motion.div>  
       </div>
-    </div>   
+    </div>  
+   
   )
   else if (tokenAddress !== null ) return (
     <div id="generate" name="generate" className='generator'>
-      <div className="container">
+      <motion.div ref={ref} initial="hidden" animate="visible" variants={indexTextVariants2} className="container">
         <div className="content">
           <h1>{tokenName} Was</h1>
           <h1>Successfully <span>Minted</span>.</h1>
@@ -156,7 +230,7 @@ const Home = () => {
             <a href="." className="button secondcolor">NEW MINT</a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>  
   )
   else if (loading == true && tokenAddress === null) return (
@@ -172,10 +246,18 @@ const Home = () => {
     <div id="generate" name="generate" className='generator'>
       <div className="container">
         <div className="content">
-          <h1>Before We Begin,</h1>
-          <h1>Please Connect</h1>
-          <h1><span>to MetaMask</span></h1>
-          <button onClick={connectWallet} className="button">CONNECT</button>
+          <motion.div ref={ref} initial="hidden" animate={controls} variants={indexTextVariants}>
+            <h1>Before We Begin,</h1>
+          </motion.div>
+          <motion.div ref={ref} initial="hidden" animate={controls} variants={indexTextVariants3}>
+            <h1>Please Connect</h1>
+          </motion.div>
+          <motion.div ref={ref} initial="hidden" animate={controls} variants={indexTextVariants3}>
+            <h1><span>to MetaMask</span></h1>
+          </motion.div>
+          <motion.div ref={ref} initial="hidden" animate={controls} variants={indexTextVariants3}>
+            <button onClick={connectWallet} className="button">CONNECT</button>
+          </motion.div>
           <div></div>
         </div>
       </div>
