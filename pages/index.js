@@ -190,7 +190,7 @@ const Home = () => {
   if (address !== null && tokenAddress === null) return (
     <div id="generate" name="generate" className='generator'>
       <div className="container">
-          <motion.div className="mobile-index" ref={ref} initial="hidden" animate="visible" variants={indexTextVariants} className="content">
+          <motion.div ref={ref} initial="hidden" animate="visible" variants={indexTextVariants} className="content">
             <h1>Let&apos;s <span>Mint</span>!</h1>
           </motion.div>
           <motion.div ref={ref} initial="hidden" animate="visible" variants={indexTextVariants2} className="content">
