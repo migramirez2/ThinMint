@@ -564,7 +564,11 @@ a.button {
 
 @media screen and (max-width: 1300px) {
   .generator h1 {
-    font-size: 3.7rem;
+    font-size: 3.2rem;
+  }
+
+  .generator .content {
+    left: 55%;
   }
 }
 
@@ -604,20 +608,23 @@ a.button {
   .footer {
     height: 100%;
   }
-
 }
 
 @media screen and (max-width: 940px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .navbar {
     background-color: rgba(0, 0, 0, .7);
+  }
+
+  .navbar .container {
+    margin-left: 0;
   }
 
   .navbar .hamburger {
@@ -629,13 +636,14 @@ a.button {
   .navbar .nav-menu {
       position: absolute;
       flex-direction: column;
-      width: 100%;
+      width: 40vw;
       height: 100vh;
       top: 0;
       left:-100%;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 0, 0, .9);
+      padding-left: 0;
+      background: rgba(0, 0, 0, .97);
       transition: 0.5s ease-in;
   }
   
@@ -650,8 +658,8 @@ a.button {
   }
 
   .navbar li {
-      margin-right: 1rem;
       font-size: 2rem;
+      padding: 2rem;
   }
 
   .navbar button {
@@ -661,28 +669,64 @@ a.button {
   .hero .container {
     justify-content: center;
     align-items: center;
+    max-width: none;
+    margin: 0;
   }
 
   .hero .content {
-    margin: 2%;
-    width: 96vw;
+    width: 90vw;
     height: 50vh;
     padding: 0;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, .8);
+    border-radius: 40px;
+    margin-left: 5vw;
+  }
+
+  .generator .container {
+    justify-content: center;
+    align-items: center;
   }
 
   .generator .content {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
-    width:100%;
+    right: 0;
+    text-align: center;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
     padding: 1rem;
-    background: rgba(255, 255, 255, .65);
+    background: rgba(255, 255, 255, .85);
+    border-radius: 40px;
   }
 
+  .mobile-index {
+    z-index: 10;
+  }
+
+  .info .container {
+    align-items: center;
+    justify-content: center;
+  }
+  
   .info .content {
+    justify-content: center !important;
+    align-items: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
+    right: 0;
     width: 100%;
+    height: 45%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 40px;
   }
 
   .footer {
@@ -696,4 +740,60 @@ a.button {
   .footer form {
     grid-column: 1 / span 2;
   }
+}
+
+@media screen and (max-width: 620px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .hero .minty {
+    font-size: 2.5rem !important;
+  }
+
+  .info h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .info h2 {
+    font-size: 1.8rem;
+  }
+
+  .info h3 {
+    font-size: 1.0rem;
+  }
+
+.info .two-button{
+  width: 16rem;
+}
+
+  .info .button {
+    font-size: 1rem;
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem !important;
+  }
+
+  .hero .minty {
+    font-size: 1.7rem !important;
+  }
+
+  .hero .two-button {
+    width: 15rem;
+    padding-top: 4rem;
+  }
+
+  .hero .button {
+    font-size: 1.1rem !important;
+  }
+
+  .info .content {
+    height: 65%;
+    top: 12.5%;
+  }
+
 }
