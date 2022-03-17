@@ -152,7 +152,7 @@ const Home = () => {
           <h1>{tokenName} Was</h1>
           <h1>Successfully <span>Minted</span>.</h1>
           <div className='two-button float-left success'>
-            <a href={"https://rinkeby.etherscan.io/tx/" + JSON.stringify(tokenAddress.hash).replace(/\"/g, "")} target="_blank" className="button">VIEW ETHERSCAN</a>
+            <a href={"https://rinkeby.etherscan.io/tx/" + JSON.stringify(tokenAddress.hash).replace(/\"/g, "")} target="_blank" rel="noreferrer" className="button">VIEW ETHERSCAN</a>
             <a href="." className="button secondcolor">NEW MINT</a>
           </div>
         </div>
