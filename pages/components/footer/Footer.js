@@ -31,8 +31,8 @@ const Footer = () => {
                     </div>
                     <form>
                         <div className="social-group">
-                            <a href="https://www.linkedin.com/in/andrew-waine-florida/" target="_blank"><FiLinkedin className='social-icon' /></a>
-                            <a href="https://github.com/Andy-Waine/thinMint" target="_blank"><FiGithub className='social-icon' /></a>
+                            <a href="https://www.linkedin.com/in/andrew-waine-florida/" target="_blank" rel="noreferrer"><FiLinkedin className='social-icon' /></a>
+                            <a href="https://github.com/Andy-Waine/thinMint" target="_blank" rel="noreferrer"><FiGithub className='social-icon' /></a>
                         </div>
                     </form>
                 </div>

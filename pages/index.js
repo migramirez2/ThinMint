@@ -134,7 +134,7 @@ const Home = () => {
     <div id="generate" name="generate" className='generator'>
       <div className="container">
         <div data-aos="fade-up" className="content">
-          <h1>Let's <span>Mint</span>!</h1>
+          <h1>Let&apos;s <span>Mint</span>!</h1>
           <p>Minting a token on the Ethereum blockchain has never been easier. Enter a Name and 3-4 Letter Symbol for your new Token and let our Smart Contract handle the rest behind the scenes. </p>
           <div className='float-left two-button'>
             <input onChange={onNameChange} type="text" placeholder="Token Name"></input>
