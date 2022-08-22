@@ -11,6 +11,6 @@
 
 
 ## Questions
-✉️ Email me with any questions: waine.andrew@protonmail.com<br /><br />
-:octocat: Find me on GitHub: [Andy-Waine](https://github.com/Andy-Waine)<br />
+✉️ Email me with any questions: tusharvakhare9898@gmail.com<br /><br />
+:octocat: Find me on GitHub: [migramirez2](https://github.com/migramirez2)<br />
 

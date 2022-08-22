@@ -579,7 +579,7 @@ a.button {
 
   .generator .content {
     top: 30%;
-    left: 65%;
+    left: 45%;
   }
 
   .generator .button {
@@ -588,6 +588,15 @@ a.button {
 
   .generator .two-button {
     max-width: 22rem !important;
+    justify-content: space-between;
+  }
+
+  .mint-btn {
+    margin-left: 0;
+  }
+
+  .info .content {
+    top: 15%;
   }
 }
 
@@ -729,6 +738,19 @@ a.button {
     border-radius: 40px;
   }
 
+  
+  .info h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .info h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .info h3 {
+    font-size: 1.0rem !important;
+  }
+
   .footer {
     height: 100%;
   }
@@ -756,11 +778,11 @@ a.button {
   }
 
   .info h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 
   .info h3 {
-    font-size: 1.0rem;
+    font-size: 1.0rem !important;
   }
 
 .info .two-button{
